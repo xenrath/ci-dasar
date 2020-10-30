@@ -3,11 +3,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Buku extends CI_Controller {
 
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('buku_m', 'buku'); 
+	}
+
 	public function index()
 	{
-		$this->load->model('buku_m');
-		$query = $this->buku_m->get();
-		$data['buku'] = $query->result();
+		$query = $this->buku->get();
+		$data = array(
+				'header' => 'Tampil Data Buku',
+				'buku' => $query->result(),
+			);
 		$this->load->view('buku_tampil', $data);
+	}
+
+	function add()
+	{
+		$data = array(
+				'header' => 'Tambah Data Buku'
+			);
+		$this->load->view('buku_tambah', $data);
+	}
+
+	function edit($id = null)
+	{
+		echo "Edit Data".$id;
+	}
+
+	function proses()
+	{
+		if (isset($_POST['add'])) {
+			$inputan = $this->input->post(null, TRUE);
+			$this->buku->add($inputan);
+		}else if (isset($_POST['edit'])) {
+			
+		}
+		redirect('buku');
 	}
 }

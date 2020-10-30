@@ -1,3 +1,5 @@
+<title><?= $header ?></title>
+
 <style type="text/css">
 	table.data {
 		border-collapse: collapse;
@@ -6,6 +8,11 @@
 		padding: 5px;
 	}
 </style>
+
+<div style="margin-bottom: 20px;">
+	<a href="<?= site_url('buku/add'); ?>"><button>Tambah</button></a>
+</div>
+
 <table class="data" border="1">
 	<tr>
 		<th>No. </th>
