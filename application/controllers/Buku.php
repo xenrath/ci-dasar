@@ -29,7 +29,12 @@ class Buku extends CI_Controller {
 
 	function edit($id = null)
 	{
-		echo "Edit Data".$id;
+		$query = $this->buku->get($id);
+		$data = array(
+				'header' => 'Edit Data Buku',
+				'buku' => $query->row()
+			);
+		$this->load->view('buku_edit', $data);
 	}
 
 	function proses()
@@ -38,7 +43,8 @@ class Buku extends CI_Controller {
 			$inputan = $this->input->post(null, TRUE);
 			$this->buku->add($inputan);
 		}else if (isset($_POST['edit'])) {
-			
+			$inputan = $this->input->post(null, TRUE);
+			$this->buku->edit($inputan);
 		}
 		redirect('buku');
 	}

@@ -19,6 +19,7 @@
 		<th>Judul</th>
 		<th>Pengarang</th>
 		<th>Tahun Terbit</th>
+		<th>Opsi</th>
 	</tr>
 	<?php 
 		$no = 1;
@@ -29,6 +30,10 @@
 		<td><?= $row->judul ?></td>
 		<td><?= $row->pengarang ?></td>
 		<td><?= $row->tahun_terbit ?></td>
+		<td>
+			<a href="<?= site_url('buku/edit/'.$row->id_buku); ?>"><button>Edit</button></a>
+			<a href="<?= site_url('buku/del/'.$row->id_buku); ?>"><button>Hapus</button></a>
+		</td>
 	</tr>
 	<?php } ?>
 </table>

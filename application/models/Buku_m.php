@@ -25,6 +25,18 @@
 			$this->db->insert('tb_buku', $param);
 		}
 
+		public function edit($data)
+		{
+			$param = array(
+				'judul' => $data['judul'],
+				'pengarang' => $data['pengarang'],
+				'tahun_terbit' => $data['tahun'],
+			);
+			$this->db->set($param);
+			$this->db->where('id_buku', $data['id']);
+			$this->db->update('tb_buku');
+		}
+
 	}
 
  ?>
