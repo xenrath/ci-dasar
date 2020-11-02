@@ -1,16 +1,5 @@
-<title><?= $header ?></title>
-
-<style type="text/css">
-	table.data {
-		border-collapse: collapse;
-	}
-	table.data th, table.data td {
-		padding: 5px;
-	}
-</style>
-
 <div style="margin-bottom: 20px;">
-	<a href="<?= site_url('buku/add'); ?>"><button>Tambah</button></a>
+	<a href="<?= site_url('buku/add'); ?>"><button class="btn">Tambah</button></a>
 </div>
 
 <table class="data" border="1">
@@ -31,8 +20,8 @@
 		<td><?= $row->pengarang ?></td>
 		<td><?= $row->tahun_terbit ?></td>
 		<td>
-			<a href="<?= site_url('buku/edit/'.$row->id_buku); ?>"><button>Edit</button></a>
-			<a href="<?= site_url('buku/del/'.$row->id_buku); ?>" onclick="return confirm('Yakin menghapus data?')"><button>Hapus</button></a>
+			<a href="<?= site_url('buku/edit/'.$row->id_buku); ?>"><button class="btn">Edit</button></a>
+			<a href="<?= site_url('buku/del/'.$row->id_buku); ?>" onclick="return confirm('Yakin menghapus data?')"><button class="btn">Hapus</button></a>
 		</td>
 	</tr>
 	<?php } ?>

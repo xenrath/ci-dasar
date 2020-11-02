@@ -16,7 +16,9 @@ class Buku extends CI_Controller {
 				'header' => 'Tampil Data Buku',
 				'buku' => $query->result(),
 			);
-		$this->load->view('buku_tampil', $data);
+		$this->load->view('header', $data);
+		$this->load->view('buku_tampil');
+		$this->load->view('footer');
 	}
 
 	function add()
@@ -24,7 +26,9 @@ class Buku extends CI_Controller {
 		$data = array(
 				'header' => 'Tambah Data Buku'
 			);
-		$this->load->view('buku_tambah', $data);
+		$this->load->view('header', $data);
+		$this->load->view('buku_tambah');
+		$this->load->view('footer');
 	}
 
 	function edit($id = null)
@@ -34,7 +38,9 @@ class Buku extends CI_Controller {
 				'header' => 'Edit Data Buku',
 				'buku' => $query->row()
 			);
-		$this->load->view('buku_edit', $data);
+		$this->load->view('header', $data);
+		$this->load->view('buku_edit');
+		$this->load->view('footer');
 	}
 
 	function proses()

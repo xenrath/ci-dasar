@@ -1,5 +1,3 @@
-<title><?= $header ?></title>
-
 <?= form_open('buku/proses', '', array('id' => $buku->id_buku)); ?>
 <table>
 	<tr>

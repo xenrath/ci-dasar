@@ -1,5 +1,3 @@
-<title><?= $header ?></title>
-
 <?= form_open('buku/proses'); ?>
 <table>
 	<tr>
