@@ -37,6 +37,16 @@
 			$this->db->update('tb_buku');
 		}
 
+		public function del($id)
+		{
+			// $param = array(
+			// 	'id_buku' => $id
+			// );
+
+			$this->db->where('id_buku', $id);
+			$this->db->delete('tb_buku');
+		}
+
 	}
 
  ?>

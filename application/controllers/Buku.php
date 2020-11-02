@@ -48,4 +48,10 @@ class Buku extends CI_Controller {
 		}
 		redirect('buku');
 	}
+
+	function del($id)
+	{
+		$this->buku->del($id);
+		redirect('buku');
+	}
 }

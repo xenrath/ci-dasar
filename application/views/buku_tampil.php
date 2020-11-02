@@ -32,7 +32,7 @@
 		<td><?= $row->tahun_terbit ?></td>
 		<td>
 			<a href="<?= site_url('buku/edit/'.$row->id_buku); ?>"><button>Edit</button></a>
-			<a href="<?= site_url('buku/del/'.$row->id_buku); ?>"><button>Hapus</button></a>
+			<a href="<?= site_url('buku/del/'.$row->id_buku); ?>" onclick="return confirm('Yakin menghapus data?')"><button>Hapus</button></a>
 		</td>
 	</tr>
 	<?php } ?>
